@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package nexus.task_mng.models;
+package nexus.task_mng.DAOs;
 import java.util.Date;
 import java.util.List;
 
@@ -14,13 +14,6 @@ import org.sql2o.Sql2oException;
  * @author owenc
  */
 public class project_dtlModel {
-    private Integer id;
-    private Integer project_id;
-    private Integer user_id;
-    private String task_desc;
-    private Date start_date;
-    private Date end_date;
-    private String status;
     
     private final static String URL = "jdbc:postgresql://localhost:5432/javafx";
     private final static String USER = "postgres";
