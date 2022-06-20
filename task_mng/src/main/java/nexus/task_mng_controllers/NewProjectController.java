@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package nexus.task_mng.controllers;
+package nexus.task_mng_controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author shanise
  */
-public class UpdateProjectController implements Initializable {
+public class NewProjectController implements Initializable {
 
     /**
      * Initializes the controller class.

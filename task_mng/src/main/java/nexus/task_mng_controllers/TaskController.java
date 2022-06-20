@@ -2,20 +2,27 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package nexus.task_mng.controllers;
+package nexus.task_mng_controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
  *
  * @author shanise
  */
-public class UpdateTaskController implements Initializable {
+public class TaskController implements Initializable {
+
+    @FXML
+    private BorderPane homepage;
+    @FXML
+    private BorderPane ap;
 
     /**
      * Initializes the controller class.
@@ -27,6 +34,22 @@ public class UpdateTaskController implements Initializable {
 
     @FXML
     private void newProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void home(MouseEvent event) {
+    }
+
+    @FXML
+    private void home(ActionEvent event) {
+    }
+
+    @FXML
+    private void updateProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void deleteProject(MouseEvent event) {
     }
     
 }
