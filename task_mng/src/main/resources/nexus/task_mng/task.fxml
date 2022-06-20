@@ -242,7 +242,7 @@
                                           </Label>
                                           <HBox alignment="BASELINE_LEFT" prefHeight="51.0" prefWidth="272.0" spacing="20.0">
                                              <children>
-                                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onMouseClicked="#updateProject" style="-fx-background-color: #90CAF9#90CAF9;" text="Edit Task" textAlignment="CENTER" textFill="WHITE">
+                                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onMouseClicked="#updateTask" style="-fx-background-color: #90CAF9#90CAF9;" text="Edit Task" textAlignment="CENTER" textFill="WHITE">
                                                    <HBox.margin>
                                                       <Insets />
                                                    </HBox.margin>

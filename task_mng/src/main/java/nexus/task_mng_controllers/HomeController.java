@@ -43,20 +43,24 @@ public class HomeController implements Initializable {
         App.setRoot("newProject");
     }
 
-    @FXML
-    private void home(MouseEvent event) {
-    }
 
     @FXML
-    private void home(ActionEvent event) {
-    }
-
-    @FXML
-    private void updateProject(MouseEvent event) {
+    private void updateProject(MouseEvent event) throws IOException {
+        App.setRoot("updateProject");
     }
 
     @FXML
     private void deleteProject(MouseEvent event) {
+    }
+
+    @FXML
+    private void task(MouseEvent event) throws IOException {
+        App.setRoot("task");
+    }
+
+    @FXML
+    private void newTask(MouseEvent event) throws IOException {
+        App.setRoot("newTask");
     }
     
     
