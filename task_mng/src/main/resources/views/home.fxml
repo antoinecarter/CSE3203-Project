@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="822.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nexus.task_mng_controllers.HomeController">
    <children>
-      <BorderPane fx:id="homepage" prefHeight="519.0" prefWidth="822.0" style="-fx-background-color: #fff;">
+      <BorderPane fx:id="bp" prefHeight="519.0" prefWidth="822.0" style="-fx-background-color: #fff;">
          <left>
             <VBox prefHeight="555.0" prefWidth="248.0" spacing="5.0" style="-fx-background-color: #EFFCF8#EFFCF8; -fx-padding: 5;" BorderPane.alignment="CENTER">
                <children>

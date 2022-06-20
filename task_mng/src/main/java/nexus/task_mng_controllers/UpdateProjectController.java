@@ -25,8 +25,5 @@ public class UpdateProjectController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void newProject(MouseEvent event) {
-    }
     
 }
