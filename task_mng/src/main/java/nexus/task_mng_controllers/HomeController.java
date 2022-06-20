@@ -4,6 +4,7 @@
  */
 package nexus.task_mng_controllers;
 
+import nexus.task_mng.App;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,13 +39,12 @@ public class HomeController implements Initializable {
     }    
 
     @FXML
-    private void newProject(MouseEvent event) {
-        loadPage("newProject");
+    void newProject(MouseEvent event) throws IOException {
+        App.setRoot("newProject");
     }
 
     @FXML
     private void home(MouseEvent event) {
-        bp.setCenter(ap);
     }
 
     @FXML
@@ -53,22 +53,10 @@ public class HomeController implements Initializable {
 
     @FXML
     private void updateProject(MouseEvent event) {
-        loadPage("updateProject");
     }
 
     @FXML
     private void deleteProject(MouseEvent event) {
-    }
-    
-    private void loadPage(String page){
-    Parent root= null;
-    
-        try {
-            root = FXMLLoader.load(getClass().getResource(page+".fxml"));
-        } catch (IOException ex) {
-            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        bp.setCenter(root);
     }
     
     
