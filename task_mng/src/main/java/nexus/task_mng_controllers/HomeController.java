@@ -15,7 +15,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Tab;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 /**
@@ -29,6 +31,12 @@ public class HomeController implements Initializable {
     private BorderPane ap;
     @FXML
     private BorderPane bp;
+    @FXML
+    private Tab manageProject;
+    @FXML
+    private Tab task;
+    @FXML
+    private AnchorPane rootPane;
 
     /**
      * Initializes the controller class.
@@ -61,6 +69,11 @@ public class HomeController implements Initializable {
     @FXML
     private void newTask(MouseEvent event) throws IOException {
         App.setRoot("newTask");
+    }
+
+    @FXML
+    private void progressChart(MouseEvent event) throws IOException {
+        App.setRoot("progressChart");
     }
     
     

@@ -58,5 +58,10 @@ public class TaskController implements Initializable {
     private void updateTask(MouseEvent event) throws IOException {
         App.setRoot("updateTask");
     }
+
+    @FXML
+    private void homepage(MouseEvent event) throws IOException {
+        App.setRoot("home");
+    }
     
 }
