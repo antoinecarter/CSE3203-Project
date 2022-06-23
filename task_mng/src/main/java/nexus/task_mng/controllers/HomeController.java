@@ -84,6 +84,13 @@ public class HomeController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+    /*
+        Author: matt
+        Date:  Apr 18, 2020 
+        Source: https://stackoverflow.com/questions/61285124/for-loop-in-fxml-file-how-to-send-data-from-controller-to-fxml-file
+    */
+
        project_hdModel projs = new project_hdModel();
        List<project_hdDTO> proj_list = projs.viewProjects();
        List<String> col = new ArrayList<String>();

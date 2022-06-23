@@ -79,7 +79,10 @@ public class usersmodel {
             throw new Sql2oException("An error occured while executing Statement", t);
         }
     }
+    /*
     
+    Source: https://www.tabnine.com/code/java/methods/org.sql2o.data.Table/rows
+    */
     public List<usersDTO> viewUser(Integer id){
         
         ArrayList<usersDTO> users_list = new ArrayList<>();
