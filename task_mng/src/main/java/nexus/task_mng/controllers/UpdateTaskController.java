@@ -81,7 +81,12 @@ public class UpdateTaskController implements Initializable {
             Logger.getLogger(UpdateTaskController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+/*
+    Author: a.b
+    Date: Nov 28, 2012
+    Source: https://stackoverflow.com/questions/13567019/close-fxml-window-by-code-javafx
 
+    */    
     @FXML
     void returnHome(MouseEvent event) {
         try {
