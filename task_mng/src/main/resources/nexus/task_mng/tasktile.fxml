@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="550.0" spacing="10.0" style="-fx-background-color: #EFFCF8#EFFCF8 #EFFCF8#EFFCF8;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nexus.task_mng.controllers.TaskTileController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+         <children>
+            <Text fx:id="t_desc" strokeType="OUTSIDE" strokeWidth="0.0" text="Task" wrappingWidth="333.671875">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="t_user" strokeType="OUTSIDE" strokeWidth="0.0" text="User" wrappingWidth="334.671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <Text fx:id="t_status" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Ignored" textAlignment="CENTER" wrappingWidth="98.13671875">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <MFXButton buttonType="RAISED" depthLevel="LEVEL5" onMouseClicked="#updateTask" prefHeight="36.0" prefWidth="76.0" rippleColor="#00c9a7" style="-fx-background-color: #6f31c6;" text="Edit" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></MFXButton>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</HBox>

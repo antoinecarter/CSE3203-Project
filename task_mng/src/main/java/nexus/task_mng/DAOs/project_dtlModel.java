@@ -4,12 +4,18 @@
  */
 package nexus.task_mng.DAOs;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import static nexus.task_mng.DAOs.project_hdModel.VIEWONE_QUERY;
+import nexus.task_mng.DTOs.project_dtlDTO;
+import nexus.task_mng.DTOs.project_hdDTO;
+import nexus.task_mng.DTOs.statusCount1DTO;
 
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
+import org.sql2o.data.Table;
 /**
  *
  * @author owenc
@@ -27,6 +33,8 @@ public class project_dtlModel {
     public final static String DELETE_QUERY = "DELETE FROM public.\"PROJECT_DTL\" WHERE id = :id";
     public final static String VIEWALL_QUERY = "SELECT * FROM public.\"PROJECT_DTL\"";
     public final static String VIEWONE_QUERY = "SELECT * FROM public.\"PROJECT_DTL\" WHERE id = :id";
+    public final static String STATUS_QUERY = "SELECT DISTINCT a.title, b.status, COUNT(b.*) status_count FROM public.\"PROJECT_HD\" a JOIN public.\"PROJECT_DTL\" b ON a.id = b.project_id WHERE b.status = :status GROUP BY a.title, b.status";
+    
     
     static{
         sql2o = new Sql2o(URL, USER, PASSWORD);
@@ -48,7 +56,7 @@ public class project_dtlModel {
         }
     }
     
-    public static void updateProjectDTL(Integer id, Integer project_id, Integer user_id, String task_desc, Date start_date, Date end_date, String status){
+    public static void updateProjectDTL(Integer id, Integer project_id, Integer user_id, String task_desc, LocalDate start_date, LocalDate end_date, String status){
         
         try(Connection con = sql2o.open()){
             con.createQuery(UPDATE_QUERY)
@@ -58,7 +66,7 @@ public class project_dtlModel {
                     .addParameter("start_date", start_date)
                     .addParameter("end_date", end_date)
                     .addParameter("status", status)
-                    .addParameter(":id", id)
+                    .addParameter("id", id)
                     .executeUpdate();
         }catch(Throwable t){
             throw new Sql2oException("An error occured while executing Statement", t);
@@ -76,23 +84,77 @@ public class project_dtlModel {
         }
     }
     
-    public List<project_dtlModel> viewProjectDTL(Integer id){
+    public List<project_dtlDTO> viewProjectDTL(Integer id){
+        
+        ArrayList<project_dtlDTO> task_list = new ArrayList<>();
         
         try(Connection con = sql2o.open()){
-            return con.createQuery(VIEWONE_QUERY)
+            Table task_tbl = con.createQuery(VIEWONE_QUERY)
                     .addParameter("id", id)
-                    .executeAndFetch(project_dtlModel.class);
+                    .executeAndFetchTable();
+            task_tbl.rows().forEach(
+                row -> {
+                    project_dtlDTO task_res = new project_dtlDTO();
+                    task_res.set_id(row.getInteger("id"));
+                    task_res.setProject_id(row.getInteger("project_id"));
+                    task_res.setUser_id(row.getInteger("user_id"));
+                    task_res.setTask_desc(row.getString("task_desc"));
+                    task_res.setStart_date(row.getDate("start_date").toString());
+                    task_res.setEnd_date(row.getDate("end_date").toString());
+                    task_res.setStatus(row.getString("status"));
+                    task_list.add(task_res);
+                });
+            return task_list;
         }catch(Throwable t){
             throw new Sql2oException("An error occured while executing Statement", t);
         }
     }
     
-    public List<project_dtlModel> viewProjectDTLs(){
+    public List<project_dtlDTO> viewProjectDTLs(){
+        
+        ArrayList<project_dtlDTO> task_list = new ArrayList<>();
+
         try(Connection con = sql2o.open()){
-            return con.createQuery(VIEWALL_QUERY)
-                    .executeAndFetch(project_dtlModel.class);
+            
+            Table task_tbl = con.createQuery(VIEWALL_QUERY)
+                    .executeAndFetchTable();
+            task_tbl.rows().forEach(
+                row -> {
+                    project_dtlDTO task_res = new project_dtlDTO();
+                    task_res.set_id(row.getInteger("id"));
+                    task_res.setProject_id(row.getInteger("project_id"));
+                    task_res.setUser_id(row.getInteger("user_id"));
+                    task_res.setTask_desc(row.getString("task_desc"));
+                    task_res.setStart_date(row.getDate("start_date").toString());
+                    task_res.setEnd_date(row.getDate("end_date").toString());
+                    task_res.setStatus(row.getString("status"));
+                    task_list.add(task_res);
+                    
+                });
+            return task_list;
         }catch(Throwable t){
             throw new Sql2oException("An error occured while executing Statement", t);
+        }
+    }
+    
+    public List<statusCount1DTO> statusCount(String status){
+        ArrayList<statusCount1DTO> status_list = new ArrayList<>();
+        
+        try(Connection con = sql2o.open()){
+            Table status_tbl = con.createQuery(STATUS_QUERY)
+                    .addParameter("status", status)
+                    .executeAndFetchTable();
+            status_tbl.rows().forEach(
+                row -> {
+                    statusCount1DTO status_res = new statusCount1DTO();
+                    status_res.setTitle(row.getString("title"));
+                    status_res.setStatus(row.getString("status"));
+                    status_res.setStatus_count(row.getInteger("status_count"));
+                    status_list.add(status_res);
+                });
+            return status_list;
+        }catch(Throwable t){
+            throw new Sql2oException("An error occured while executing statement", t);
         }
     }
 }

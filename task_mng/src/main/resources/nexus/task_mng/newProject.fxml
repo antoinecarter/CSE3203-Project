@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nexus.task_mng_controllers.NewProjectController">
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nexus.task_mng.controllers.NewProjectController">
    <top>
       <HBox alignment="CENTER" prefHeight="55.0" prefWidth="574.0" style="-fx-background-color: #EFFCF8#EFFCF8 #EFFCF8#EFFCF8;">
          <children>

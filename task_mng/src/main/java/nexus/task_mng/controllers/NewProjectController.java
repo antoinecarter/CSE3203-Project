@@ -2,17 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
  */
-package nexus.task_mng_controllers;
+package nexus.task_mng.controllers;
 
 
 import nexus.task_mng.DAOs.project_hdModel;
 import nexus.task_mng.DTOs.project_hdDTO;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.MFXDatePicker;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -20,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import nexus.task_mng.App;
 
 /**
  * FXML Controller class
@@ -62,7 +66,11 @@ public class NewProjectController implements Initializable {
 
     @FXML
     void returnHome(MouseEvent event) {
-
+        try {
+            App.setRoot("home");
+        } catch (IOException ex) {
+            Logger.getLogger(NewProjectController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     /**

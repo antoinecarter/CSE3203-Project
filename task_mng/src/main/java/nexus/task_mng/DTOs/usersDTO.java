@@ -14,8 +14,7 @@ public class usersDTO {
     private Integer id;
     private String first_name;
     private String surname;
-    private Date dob;
-    private Integer project_id;
+    private String dob;
     private String email;
     
     public Integer get_id(){
@@ -30,13 +29,10 @@ public class usersDTO {
         return surname;
     }
     
-    public Date getDOB(){
+    public String getDOB(){
         return dob;
     }
     
-    public Integer getProject_id(){
-        return project_id;
-    }
     
     public String getEmail(){
         return email;
@@ -54,12 +50,8 @@ public class usersDTO {
         this.surname = surname;
     }
     
-    public void setDOB(Date dob){
+    public void setDOB(String dob){
         this.dob = dob;
-    }
-    
-    public void setProject_id(Integer project_id){
-        this.project_id = project_id;
     }
     
     public void setEmail(String email){

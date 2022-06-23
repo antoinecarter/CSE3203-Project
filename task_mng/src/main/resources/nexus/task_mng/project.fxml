@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #00C9A7; -fx-background-radius: 5px;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nexus.task_mng.controllers.projectController">
+   <children>
+      <MFXButton fx:id="proj" buttonType="RAISED" onMouseClicked="#updateProject" prefHeight="30.0" prefWidth="49.0" rippleColor="WHITE" style="-fx-background-color: black;" text="Edit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </MFXButton>
+      <MFXButton prefHeight="60.0" prefWidth="142.0" rippleAnimateBackground="false" style="-fx-background-color: #00C9A7;">
+         <graphic>
+            <VBox alignment="CENTER_LEFT" prefHeight="52.0" prefWidth="132.0" spacing="10.0">
+               <children>
+                  <Label fx:id="p_name" prefHeight="21.0" prefWidth="132.0" text="Project Name:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="p_status" prefHeight="21.0" prefWidth="133.0" text="Status">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </graphic>
+      </MFXButton>
+   </children>
+</HBox>
